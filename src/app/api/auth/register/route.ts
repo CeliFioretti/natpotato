@@ -7,6 +7,7 @@ type RegisterBody = {
             password: string
         }
 
+
 // Crear usuario
 export async function POST(request: Request) {
     try {
@@ -17,7 +18,7 @@ export async function POST(request: Request) {
         // 2. comprobación si el usuario no ingresa algun campo
         if (!body.correo || !body.nombre || !body.password) {
             return NextResponse.json({
-                error: "Faltan campos por rellenar"
+                error: "Faltan campos por rellenar" 
             }, { status: 400 })
         }
 
