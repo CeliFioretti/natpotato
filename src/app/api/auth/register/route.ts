@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import bcrypt from 'bcrypt';
+import {supabase} from '@/app/lib/supabase/client'
 
 type RegisterBody = {
             nombre: string,
@@ -48,3 +49,4 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "Sucedio un error al intentar crear usuario" }, { status: 500 })
     }
 }
+
